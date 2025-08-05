@@ -570,8 +570,11 @@
                 <button class="btn btn-outline" id="btn-github-connect" style="font-size: 12px;">
                     🔗 Conectar GitHub
                 </button>
+                <button class="btn btn-outline hidden" id="btn-github-download" style="font-size: 12px;">
+                    📥 Descargar Datos
+                </button>
                 <button class="btn btn-outline hidden" id="btn-github-sync" style="font-size: 12px;">
-                    🔄 Sincronizar Ahora
+                    🔄 Sincronizar
                 </button>
             </div>
         </div>
@@ -1117,6 +1120,7 @@
                 const syncInfo = document.getElementById('sync-info');
                 const connectBtn = document.getElementById('btn-github-connect');
                 const syncBtn = document.getElementById('btn-github-sync');
+                const downloadBtn = document.getElementById('btn-github-download');
 
                 switch(status) {
                     case 'connected':
@@ -1124,6 +1128,7 @@
                         statusText.textContent = 'GitHub Storage: Conectado';
                         connectBtn.textContent = '🔓 Desconectar';
                         syncBtn.classList.remove('hidden');
+                        downloadBtn.classList.remove('hidden');
                         isGithubConnected = true;
                         break;
                     case 'disconnected':
@@ -1131,6 +1136,7 @@
                         statusText.textContent = 'GitHub Storage: Desconectado';
                         connectBtn.textContent = '🔗 Conectar GitHub';
                         syncBtn.classList.add('hidden');
+                        downloadBtn.classList.add('hidden');
                         isGithubConnected = false;
                         break;
                     case 'syncing':
@@ -1267,7 +1273,7 @@
             }
         }
 
-        async function loadFromGithub() {
+        async function loadFromGithub(forceLoad = false) {
             try {
                 if (!isGithubConnected) {
                     throw new Error('GitHub no está conectado');
@@ -1284,18 +1290,30 @@
 
                 if (!response.ok) {
                     if (response.status === 404) {
-                        // El archivo no existe, esto es normal en la primera vez
-                        console.log('Archivo de datos no encontrado en GitHub, será creado en la primera sincronización');
+                        console.log('Archivo de datos no encontrado en GitHub');
+                        updateGithubStatus('connected', 'Archivo de datos no encontrado');
                         return false;
                     }
-                    throw new Error(`Error cargando desde GitHub: ${response.status}`);
+                    if (response.status === 401) {
+                        throw new Error('Token de GitHub inválido o sin permisos');
+                    }
+                    throw new Error(`Error de GitHub API: ${response.status} - ${response.statusText}`);
                 }
 
                 const fileData = await response.json();
-                const content = decodeURIComponent(escape(atob(fileData.content)));
+                
+                // Decodificar el contenido base64
+                let content;
+                try {
+                    content = decodeURIComponent(escape(atob(fileData.content.replace(/\n/g, ''))));
+                } catch (decodeError) {
+                    throw new Error('Error decodificando archivo desde GitHub');
+                }
+
                 const data = JSON.parse(content);
 
                 if (data.moldes && Array.isArray(data.moldes)) {
+                    const oldCount = moldes.length;
                     moldes = data.moldes;
                     
                     // Guardar también en local como respaldo
@@ -1305,14 +1323,31 @@
                     saveGithubConfig();
                     updateGithubStatus('connected');
                     
-                    console.log(`Cargados ${moldes.length} moldes desde GitHub`);
+                    console.log(`Cargados ${moldes.length} moldes desde GitHub (antes: ${oldCount})`);
+                    
+                    // Refrescar la vista si hay cambios
+                    if (oldCount !== moldes.length || forceLoad) {
+                        refreshCurrentView();
+                        showMessage(`✅ Descargados ${moldes.length} moldes desde GitHub`, 'success');
+                    }
+                    
                     return true;
                 }
                 
                 throw new Error('Formato de datos inválido en GitHub');
             } catch (error) {
                 console.error('Error cargando desde GitHub:', error);
-                updateGithubStatus('error');
+                updateGithubStatus('error', `Error: ${error.message}`);
+                
+                // Mostrar error específico al usuario
+                if (error.message.includes('Token')) {
+                    showMessage('❌ Token de GitHub inválido. Verifique la configuración.', 'error');
+                } else if (error.message.includes('404')) {
+                    showMessage('⚠️ No hay datos en GitHub aún. Sincronice desde el dispositivo principal.', 'error');
+                } else {
+                    showMessage(`❌ Error cargando desde GitHub: ${error.message}`, 'error');
+                }
+                
                 throw error;
             }
         }
@@ -1520,17 +1555,8 @@
 
         async function loadMoldesDB() {
             try {
-                // Intentar cargar desde GitHub primero
-                if (isGithubConnected) {
-                    try {
-                        await loadFromGithub();
-                        return moldes;
-                    } catch (error) {
-                        console.warn('Error cargando desde GitHub, usando datos locales:', error);
-                    }
-                }
-
-                // Fallback a IndexedDB/localStorage
+                // NO intentar cargar desde GitHub automáticamente al inicio
+                // Solo cargar datos locales al inicio
                 if (db) {
                     return new Promise((resolve, reject) => {
                         const transaction = db.transaction(['moldes'], 'readonly');
@@ -1549,9 +1575,22 @@
                     return moldes;
                 }
             } catch (error) {
-                console.warn('Error cargando datos:', error);
+                console.warn('Error cargando datos locales:', error);
                 loadFromLocalStorage();
                 return moldes;
+            }
+        }
+
+        async function forceLoadFromGithub() {
+            try {
+                if (!isGithubConnected) {
+                    showMessage('❌ GitHub no está conectado', 'error');
+                    return;
+                }
+                
+                await loadFromGithub(true);
+            } catch (error) {
+                console.error('Error en carga forzada:', error);
             }
         }
 
@@ -2529,6 +2568,14 @@
                 // Actualizar estado inicial de GitHub
                 if (isGithubConnected) {
                     updateGithubStatus('connected');
+                    // Intentar cargar datos desde GitHub automáticamente
+                    setTimeout(async () => {
+                        try {
+                            await loadFromGithub(true);
+                        } catch (error) {
+                            console.warn('Error cargando datos al inicio:', error);
+                        }
+                    }, 1000);
                 } else {
                     updateGithubStatus('disconnected');
                 }
@@ -2540,10 +2587,22 @@
                 
                 // Configurar GitHub
                 document.getElementById('btn-github-connect').addEventListener('click', connectGithub);
+                
+                document.getElementById('btn-github-download').addEventListener('click', async () => {
+                    try {
+                        await forceLoadFromGithub();
+                    } catch (error) {
+                        showError('Error descargando datos: ' + error.message);
+                    }
+                });
+                
                 document.getElementById('btn-github-sync').addEventListener('click', async () => {
                     try {
+                        // Intentar cargar desde GitHub primero
+                        await forceLoadFromGithub();
+                        // Luego sincronizar cambios locales
                         await syncToGithub();
-                        showMessage('✅ Sincronización exitosa', 'success');
+                        showMessage('✅ Sincronización completa exitosa', 'success');
                     } catch (error) {
                         showError('Error en sincronización: ' + error.message);
                     }
@@ -2580,7 +2639,17 @@
                         document.getElementById('modal-github-setup').classList.add('hidden');
                         updateGithubStatus('connected');
                         
-                        showMessage('✅ GitHub Storage conectado exitosamente', 'success');
+                        // IMPORTANTE: Cargar datos automáticamente después de conectar
+                        try {
+                            await loadFromGithub(true);
+                            showMessage('✅ GitHub Storage conectado y datos descargados exitosamente', 'success');
+                        } catch (error) {
+                            if (error.message.includes('404')) {
+                                showMessage('✅ GitHub Storage conectado. No hay datos previos para descargar.', 'success');
+                            } else {
+                                showMessage(`✅ GitHub Storage conectado, pero error descargando datos: ${error.message}`, 'error');
+                            }
+                        }
                         
                     } catch (error) {
                         console.error('Error configurando GitHub:', error);
