@@ -119,7 +119,7 @@
     },
     {
       "id": "mdz3npm3iusxqubtkwm",
-      "mantenimientoProximo": "",
+      "mantenimientoProximo": "2025-08-08",
       "numeroActivo": "444",
       "numeroEquipo": "666",
       "modelo": "Llanera",
@@ -127,11 +127,11 @@
       "talla": "41-2",
       "ubicacion": "Maquina WT02",
       "estado": "Rechazado por calidad",
-      "defecto": "TAL-BOTA TALLADA",
+      "defecto": "DESS-DESFACE EN SUELA",
       "observaciones": "",
       "fechaCreacion": "2025-08-05T22:17:21.773Z",
       "creadoPor": "Administrador Sistema",
-      "ultimaModificacion": "2025-08-05T22:18:36.560Z",
+      "ultimaModificacion": "2025-08-05T22:19:34.167Z",
       "ultimoModificadoPor": "Administrador Sistema",
       "hojaVida": [
         {
@@ -168,10 +168,27 @@
           "defecto": "TAL-BOTA TALLADA",
           "usuario": "Administrador Sistema",
           "usuarioRole": "admin"
+        },
+        {
+          "fecha": "2025-08-05T22:19:34.167Z",
+          "observacion": "Programado mantenimiento preventivo para el 2025-08-08",
+          "ubicacion": "Maquina WT02",
+          "estado": "Rechazado por calidad",
+          "usuario": "Administrador Sistema",
+          "usuarioRole": "admin"
+        },
+        {
+          "fecha": "2025-08-05T22:19:34.167Z",
+          "observacion": "Defecto: DESS-DESFACE EN SUELA",
+          "ubicacion": "Maquina WT02",
+          "estado": "Rechazado por calidad",
+          "defecto": "DESS-DESFACE EN SUELA",
+          "usuario": "Administrador Sistema",
+          "usuarioRole": "admin"
         }
       ]
     }
   ],
-  "lastUpdate": "2025-08-05T22:18:36.571Z",
+  "lastUpdate": "2025-08-05T22:19:34.179Z",
   "version": "1.0"
 }
