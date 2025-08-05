@@ -9,13 +9,13 @@
       "estacion": "1",
       "talla": "32",
       "ubicacion": "Maquina WT01",
-      "estado": "Rechazado por calidad",
-      "defecto": "BROS-BRILLO EN SUELA",
+      "estado": "Disponible",
+      "defecto": "",
       "observaciones": "",
       "fechaCreacion": "2025-08-05T04:17:05.135Z",
       "creadoPor": "Administrador Sistema",
-      "ultimaModificacion": "2025-08-05T11:57:11.971Z",
-      "ultimoModificadoPor": "Administrador Sistema",
+      "ultimaModificacion": "2025-08-05T12:25:26.619Z",
+      "ultimoModificadoPor": "Inspector Calidad 1",
       "hojaVida": [
         {
           "fecha": "2025-08-05T04:17:05.136Z",
@@ -51,6 +51,15 @@
           "defecto": "BROS-BRILLO EN SUELA",
           "usuario": "Administrador Sistema",
           "usuarioRole": "admin"
+        },
+        {
+          "fecha": "2025-08-05T12:25:26.619Z",
+          "observacion": "Cambio de estado a: Disponible",
+          "ubicacion": "Maquina WT01",
+          "estado": "Disponible",
+          "defecto": null,
+          "usuario": "Inspector Calidad 1",
+          "usuarioRole": "calidad"
         }
       ]
     },
@@ -91,6 +100,6 @@
       ]
     }
   ],
-  "lastUpdate": "2025-08-05T12:24:40.978Z",
+  "lastUpdate": "2025-08-05T12:25:26.625Z",
   "version": "1.0"
 }
