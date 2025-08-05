@@ -116,8 +116,35 @@
           "usuarioRole": "calidad"
         }
       ]
+    },
+    {
+      "id": "mdz3npm3iusxqubtkwm",
+      "mantenimientoProximo": "",
+      "numeroActivo": "444",
+      "numeroEquipo": "666",
+      "modelo": "Llanera",
+      "estacion": "5",
+      "talla": "41-2",
+      "ubicacion": "Maquina WT04",
+      "estado": "En Correctivo",
+      "defecto": "",
+      "observaciones": "",
+      "fechaCreacion": "2025-08-05T22:17:21.773Z",
+      "creadoPor": "Administrador Sistema",
+      "ultimaModificacion": "2025-08-05T22:17:21.773Z",
+      "ultimoModificadoPor": "Administrador Sistema",
+      "hojaVida": [
+        {
+          "fecha": "2025-08-05T22:17:21.773Z",
+          "observacion": "Molde creado en el sistema",
+          "ubicacion": "Maquina WT04",
+          "estado": "En Correctivo",
+          "usuario": "Administrador Sistema",
+          "usuarioRole": "admin"
+        }
+      ]
     }
   ],
-  "lastUpdate": "2025-08-05T16:59:21.614Z",
+  "lastUpdate": "2025-08-05T22:17:21.812Z",
   "version": "1.0"
 }
