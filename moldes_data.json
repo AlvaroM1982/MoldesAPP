@@ -125,13 +125,13 @@
       "modelo": "Llanera",
       "estacion": "5",
       "talla": "41-2",
-      "ubicacion": "Correctivo",
-      "estado": "En Correctivo",
+      "ubicacion": "Maquina WT02",
+      "estado": "Disponible",
       "defecto": "",
       "observaciones": "",
       "fechaCreacion": "2025-08-05T22:17:21.773Z",
       "creadoPor": "Administrador Sistema",
-      "ultimaModificacion": "2025-08-05T22:17:48.629Z",
+      "ultimaModificacion": "2025-08-05T22:18:10.562Z",
       "ultimoModificadoPor": "Administrador Sistema",
       "hojaVida": [
         {
@@ -150,10 +150,19 @@
           "defecto": null,
           "usuario": "Administrador Sistema",
           "usuarioRole": "admin"
+        },
+        {
+          "fecha": "2025-08-05T22:18:10.562Z",
+          "observacion": "Cambio de ubicación a: Maquina WT02, Cambio de estado a: Disponible",
+          "ubicacion": "Maquina WT02",
+          "estado": "Disponible",
+          "defecto": null,
+          "usuario": "Administrador Sistema",
+          "usuarioRole": "admin"
         }
       ]
     }
   ],
-  "lastUpdate": "2025-08-05T22:17:48.640Z",
+  "lastUpdate": "2025-08-05T22:18:10.574Z",
   "version": "1.0"
 }
