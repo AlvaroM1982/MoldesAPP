@@ -1,5 +1,33 @@
 {
-  "moldes": [],
-  "lastUpdate": "2025-08-05T04:25:32.793Z",
+  "moldes": [
+    {
+      "id": "mdy12grv0kmohdct13z",
+      "mantenimientoProximo": "",
+      "numeroActivo": "4444",
+      "numeroEquipo": "555",
+      "modelo": "Llanera",
+      "estacion": "1",
+      "talla": "32",
+      "ubicacion": "Maquina WT01",
+      "estado": "Disponible",
+      "defecto": "",
+      "observaciones": "",
+      "fechaCreacion": "2025-08-05T04:17:05.135Z",
+      "creadoPor": "Administrador Sistema",
+      "ultimaModificacion": "2025-08-05T04:17:05.135Z",
+      "ultimoModificadoPor": "Administrador Sistema",
+      "hojaVida": [
+        {
+          "fecha": "2025-08-05T04:17:05.136Z",
+          "observacion": "Molde creado en el sistema",
+          "ubicacion": "Maquina WT01",
+          "estado": "Disponible",
+          "usuario": "Administrador Sistema",
+          "usuarioRole": "admin"
+        }
+      ]
+    }
+  ],
+  "lastUpdate": "2025-08-05T04:25:38.909Z",
   "version": "1.0"
 }
