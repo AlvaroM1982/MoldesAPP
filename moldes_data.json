@@ -63,13 +63,13 @@
       "estacion": "4",
       "talla": "48",
       "ubicacion": "Maquina WT01",
-      "estado": "Disponible",
-      "defecto": "",
+      "estado": "Rechazado por calidad",
+      "defecto": "DESC-DESPEGADO CAÑA - SUELA",
       "observaciones": "",
       "fechaCreacion": "2025-08-05T04:26:28.063Z",
       "creadoPor": "Administrador Sistema",
-      "ultimaModificacion": "2025-08-05T04:26:28.063Z",
-      "ultimoModificadoPor": "Administrador Sistema",
+      "ultimaModificacion": "2025-08-05T12:03:15.344Z",
+      "ultimoModificadoPor": "Inspector Calidad 1",
       "hojaVida": [
         {
           "fecha": "2025-08-05T04:26:28.063Z",
@@ -78,10 +78,19 @@
           "estado": "Disponible",
           "usuario": "Administrador Sistema",
           "usuarioRole": "admin"
+        },
+        {
+          "fecha": "2025-08-05T12:03:15.344Z",
+          "observacion": "Cambio de estado a: Rechazado por calidad, Defecto: DESC-DESPEGADO CAÑA - SUELA",
+          "ubicacion": "Maquina WT01",
+          "estado": "Rechazado por calidad",
+          "defecto": "DESC-DESPEGADO CAÑA - SUELA",
+          "usuario": "Inspector Calidad 1",
+          "usuarioRole": "calidad"
         }
       ]
     }
   ],
-  "lastUpdate": "2025-08-05T12:00:30.776Z",
+  "lastUpdate": "2025-08-05T12:03:15.356Z",
   "version": "1.0"
 }
