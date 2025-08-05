@@ -9,13 +9,13 @@
       "estacion": "1",
       "talla": "32",
       "ubicacion": "Maquina WT01",
-      "estado": "Disponible",
-      "defecto": "",
+      "estado": "Rechazado por calidad",
+      "defecto": "BROC-BRILLO EN CAÑA",
       "observaciones": "",
       "fechaCreacion": "2025-08-05T04:17:05.135Z",
       "creadoPor": "Administrador Sistema",
-      "ultimaModificacion": "2025-08-05T12:27:06.868Z",
-      "ultimoModificadoPor": "Inspector Calidad 1",
+      "ultimaModificacion": "2025-08-05T16:59:08.080Z",
+      "ultimoModificadoPor": "Administrador Sistema",
       "hojaVida": [
         {
           "fecha": "2025-08-05T04:17:05.136Z",
@@ -60,6 +60,15 @@
           "defecto": null,
           "usuario": "Inspector Calidad 1",
           "usuarioRole": "calidad"
+        },
+        {
+          "fecha": "2025-08-05T16:59:08.080Z",
+          "observacion": "Cambio de estado a: Rechazado por calidad, Defecto: BROC-BRILLO EN CAÑA",
+          "ubicacion": "Maquina WT01",
+          "estado": "Rechazado por calidad",
+          "defecto": "BROC-BRILLO EN CAÑA",
+          "usuario": "Administrador Sistema",
+          "usuarioRole": "admin"
         }
       ]
     },
@@ -109,6 +118,6 @@
       ]
     }
   ],
-  "lastUpdate": "2025-08-05T16:57:37.350Z",
+  "lastUpdate": "2025-08-05T16:59:08.085Z",
   "version": "1.0"
 }
