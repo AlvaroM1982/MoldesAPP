@@ -9,12 +9,12 @@
       "estacion": "1",
       "talla": "32",
       "ubicacion": "Maquina WT01",
-      "estado": "Disponible",
-      "defecto": "",
+      "estado": "Rechazado por calidad",
+      "defecto": "BURS-BURB.(PVC) SUELA",
       "observaciones": "",
       "fechaCreacion": "2025-08-05T04:17:05.135Z",
       "creadoPor": "Administrador Sistema",
-      "ultimaModificacion": "2025-08-05T04:17:05.135Z",
+      "ultimaModificacion": "2025-08-05T05:17:48.929Z",
       "ultimoModificadoPor": "Administrador Sistema",
       "hojaVida": [
         {
@@ -22,6 +22,15 @@
           "observacion": "Molde creado en el sistema",
           "ubicacion": "Maquina WT01",
           "estado": "Disponible",
+          "usuario": "Administrador Sistema",
+          "usuarioRole": "admin"
+        },
+        {
+          "fecha": "2025-08-05T05:17:48.929Z",
+          "observacion": "Cambio de estado a: Rechazado por calidad, Defecto: BURS-BURB.(PVC) SUELA",
+          "ubicacion": "Maquina WT01",
+          "estado": "Rechazado por calidad",
+          "defecto": "BURS-BURB.(PVC) SUELA",
           "usuario": "Administrador Sistema",
           "usuarioRole": "admin"
         }
@@ -55,6 +64,6 @@
       ]
     }
   ],
-  "lastUpdate": "2025-08-05T05:17:13.731Z",
+  "lastUpdate": "2025-08-05T05:17:48.940Z",
   "version": "1.0"
 }
