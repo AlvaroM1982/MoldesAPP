@@ -2,20 +2,20 @@
   "moldes": [
     {
       "id": "mdy12grv0kmohdct13z",
-      "mantenimientoProximo": "",
+      "mantenimientoProximo": "2025-08-08",
       "numeroActivo": "4444",
       "numeroEquipo": "555",
       "modelo": "Llanera",
       "estacion": "1",
       "talla": "32",
       "ubicacion": "Maquina WT01",
-      "estado": "Rechazado por calidad",
-      "defecto": "BROS-BRILLO EN SUELA",
+      "estado": "Programado para preventivo",
+      "defecto": "",
       "observaciones": "",
       "fechaCreacion": "2025-08-05T04:17:05.135Z",
       "creadoPor": "Administrador Sistema",
-      "ultimaModificacion": "2025-08-05T11:57:11.971Z",
-      "ultimoModificadoPor": "Administrador Sistema",
+      "ultimaModificacion": "2025-08-05T12:03:17.230Z",
+      "ultimoModificadoPor": "Inspector Calidad 1",
       "hojaVida": [
         {
           "fecha": "2025-08-05T04:17:05.136Z",
@@ -51,6 +51,23 @@
           "defecto": "BROS-BRILLO EN SUELA",
           "usuario": "Administrador Sistema",
           "usuarioRole": "admin"
+        },
+        {
+          "fecha": "2025-08-05T12:03:17.230Z",
+          "observacion": "Programado mantenimiento preventivo para el 2025-08-08",
+          "ubicacion": "Maquina WT01",
+          "estado": "Programado para preventivo",
+          "usuario": "Inspector Calidad 1",
+          "usuarioRole": "calidad"
+        },
+        {
+          "fecha": "2025-08-05T12:03:17.230Z",
+          "observacion": "Cambio de estado a: Programado para preventivo",
+          "ubicacion": "Maquina WT01",
+          "estado": "Programado para preventivo",
+          "defecto": null,
+          "usuario": "Inspector Calidad 1",
+          "usuarioRole": "calidad"
         }
       ]
     },
@@ -63,13 +80,13 @@
       "estacion": "4",
       "talla": "48",
       "ubicacion": "Maquina WT01",
-      "estado": "Rechazado por calidad",
-      "defecto": "DESC-DESPEGADO CAÑA - SUELA",
+      "estado": "Disponible",
+      "defecto": "",
       "observaciones": "",
       "fechaCreacion": "2025-08-05T04:26:28.063Z",
       "creadoPor": "Administrador Sistema",
-      "ultimaModificacion": "2025-08-05T12:03:15.344Z",
-      "ultimoModificadoPor": "Inspector Calidad 1",
+      "ultimaModificacion": "2025-08-05T04:26:28.063Z",
+      "ultimoModificadoPor": "Administrador Sistema",
       "hojaVida": [
         {
           "fecha": "2025-08-05T04:26:28.063Z",
@@ -78,19 +95,10 @@
           "estado": "Disponible",
           "usuario": "Administrador Sistema",
           "usuarioRole": "admin"
-        },
-        {
-          "fecha": "2025-08-05T12:03:15.344Z",
-          "observacion": "Cambio de estado a: Rechazado por calidad, Defecto: DESC-DESPEGADO CAÑA - SUELA",
-          "ubicacion": "Maquina WT01",
-          "estado": "Rechazado por calidad",
-          "defecto": "DESC-DESPEGADO CAÑA - SUELA",
-          "usuario": "Inspector Calidad 1",
-          "usuarioRole": "calidad"
         }
       ]
     }
   ],
-  "lastUpdate": "2025-08-05T12:03:15.356Z",
+  "lastUpdate": "2025-08-05T12:03:17.239Z",
   "version": "1.0"
 }
