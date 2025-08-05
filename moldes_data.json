@@ -9,13 +9,13 @@
       "estacion": "1",
       "talla": "32",
       "ubicacion": "Maquina WT01",
-      "estado": "Disponible",
-      "defecto": "",
+      "estado": "Rechazado por calidad",
+      "defecto": "BROS-BRILLO EN SUELA",
       "observaciones": "",
       "fechaCreacion": "2025-08-05T04:17:05.135Z",
       "creadoPor": "Administrador Sistema",
-      "ultimaModificacion": "2025-08-05T12:25:26.619Z",
-      "ultimoModificadoPor": "Inspector Calidad 1",
+      "ultimaModificacion": "2025-08-05T11:57:11.971Z",
+      "ultimoModificadoPor": "Administrador Sistema",
       "hojaVida": [
         {
           "fecha": "2025-08-05T04:17:05.136Z",
@@ -51,15 +51,6 @@
           "defecto": "BROS-BRILLO EN SUELA",
           "usuario": "Administrador Sistema",
           "usuarioRole": "admin"
-        },
-        {
-          "fecha": "2025-08-05T12:25:26.619Z",
-          "observacion": "Cambio de estado a: Disponible",
-          "ubicacion": "Maquina WT01",
-          "estado": "Disponible",
-          "defecto": null,
-          "usuario": "Inspector Calidad 1",
-          "usuarioRole": "calidad"
         }
       ]
     },
@@ -72,12 +63,12 @@
       "estacion": "4",
       "talla": "48",
       "ubicacion": "Maquina WT01",
-      "estado": "Rechazado por calidad",
-      "defecto": "DESC-DESPEGADO CAÑA - SUELA",
-      "observaciones": "",
+      "estado": "Pendiente por intervención",
+      "defecto": "",
+      "observaciones": "Despegue",
       "fechaCreacion": "2025-08-05T04:26:28.063Z",
       "creadoPor": "Administrador Sistema",
-      "ultimaModificacion": "2025-08-05T12:03:25.450Z",
+      "ultimaModificacion": "2025-08-05T12:25:38.615Z",
       "ultimoModificadoPor": "Inspector Calidad 1",
       "hojaVida": [
         {
@@ -96,10 +87,19 @@
           "defecto": "DESC-DESPEGADO CAÑA - SUELA",
           "usuario": "Inspector Calidad 1",
           "usuarioRole": "calidad"
+        },
+        {
+          "fecha": "2025-08-05T12:25:38.615Z",
+          "observacion": "Despegue",
+          "ubicacion": "Maquina WT01",
+          "estado": "Pendiente por intervención",
+          "defecto": null,
+          "usuario": "Inspector Calidad 1",
+          "usuarioRole": "calidad"
         }
       ]
     }
   ],
-  "lastUpdate": "2025-08-05T12:25:26.625Z",
+  "lastUpdate": "2025-08-05T12:25:38.648Z",
   "version": "1.0"
 }
