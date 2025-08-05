@@ -9,13 +9,13 @@
       "estacion": "1",
       "talla": "32",
       "ubicacion": "Maquina WT01",
-      "estado": "Rechazado por calidad",
-      "defecto": "BURS-BURB.(PVC) SUELA",
+      "estado": "Disponible",
+      "defecto": "",
       "observaciones": "",
       "fechaCreacion": "2025-08-05T04:17:05.135Z",
       "creadoPor": "Administrador Sistema",
-      "ultimaModificacion": "2025-08-05T05:17:48.929Z",
-      "ultimoModificadoPor": "Administrador Sistema",
+      "ultimaModificacion": "2025-08-05T10:05:36.321Z",
+      "ultimoModificadoPor": "Inspector Calidad 1",
       "hojaVida": [
         {
           "fecha": "2025-08-05T04:17:05.136Z",
@@ -33,6 +33,15 @@
           "defecto": "BURS-BURB.(PVC) SUELA",
           "usuario": "Administrador Sistema",
           "usuarioRole": "admin"
+        },
+        {
+          "fecha": "2025-08-05T10:05:36.321Z",
+          "observacion": "Cambio de estado a: Disponible",
+          "ubicacion": "Maquina WT01",
+          "estado": "Disponible",
+          "defecto": null,
+          "usuario": "Inspector Calidad 1",
+          "usuarioRole": "calidad"
         }
       ]
     },
@@ -64,6 +73,6 @@
       ]
     }
   ],
-  "lastUpdate": "2025-08-05T10:03:51.732Z",
+  "lastUpdate": "2025-08-05T10:05:36.326Z",
   "version": "1.0"
 }
