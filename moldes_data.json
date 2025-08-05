@@ -1,33 +1,5 @@
 {
-  "moldes": [
-    {
-      "id": "mdxyzj0k4rujfl9tkk",
-      "mantenimientoProximo": "",
-      "numeroActivo": "333",
-      "numeroEquipo": "33",
-      "modelo": "Llanera",
-      "estacion": "3",
-      "talla": "3",
-      "ubicacion": "Correctivo",
-      "estado": "No disponible",
-      "defecto": "",
-      "observaciones": "",
-      "fechaCreacion": "2025-08-05T03:18:48.836Z",
-      "creadoPor": "Administrador Sistema",
-      "ultimaModificacion": "2025-08-05T03:18:48.836Z",
-      "ultimoModificadoPor": "Administrador Sistema",
-      "hojaVida": [
-        {
-          "fecha": "2025-08-05T03:18:48.836Z",
-          "observacion": "Molde creado en el sistema",
-          "ubicacion": "Correctivo",
-          "estado": "No disponible",
-          "usuario": "Administrador Sistema",
-          "usuarioRole": "admin"
-        }
-      ]
-    }
-  ],
-  "lastUpdate": "2025-08-05T04:18:40.589Z",
+  "moldes": [],
+  "lastUpdate": "2025-08-05T04:18:45.559Z",
   "version": "1.0"
 }
