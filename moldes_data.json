@@ -126,12 +126,12 @@
       "estacion": "5",
       "talla": "41-2",
       "ubicacion": "Maquina WT02",
-      "estado": "Disponible",
-      "defecto": "",
+      "estado": "Rechazado por calidad",
+      "defecto": "TAL-BOTA TALLADA",
       "observaciones": "",
       "fechaCreacion": "2025-08-05T22:17:21.773Z",
       "creadoPor": "Administrador Sistema",
-      "ultimaModificacion": "2025-08-05T22:18:10.562Z",
+      "ultimaModificacion": "2025-08-05T22:18:36.560Z",
       "ultimoModificadoPor": "Administrador Sistema",
       "hojaVida": [
         {
@@ -159,10 +159,19 @@
           "defecto": null,
           "usuario": "Administrador Sistema",
           "usuarioRole": "admin"
+        },
+        {
+          "fecha": "2025-08-05T22:18:36.560Z",
+          "observacion": "Cambio de estado a: Rechazado por calidad, Defecto: TAL-BOTA TALLADA",
+          "ubicacion": "Maquina WT02",
+          "estado": "Rechazado por calidad",
+          "defecto": "TAL-BOTA TALLADA",
+          "usuario": "Administrador Sistema",
+          "usuarioRole": "admin"
         }
       ]
     }
   ],
-  "lastUpdate": "2025-08-05T22:18:10.574Z",
+  "lastUpdate": "2025-08-05T22:18:36.571Z",
   "version": "1.0"
 }
